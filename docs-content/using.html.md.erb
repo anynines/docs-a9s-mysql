@@ -3,9 +3,7 @@ title: Using a9s MySQL for PCF
 owner: Partners
 ---
 
-This topic describes how to use a9s MySQL for Pivotal Cloud Foundry (PCF) after it has been successfully installed. For more information, see the [Installing and Configuring a9s MySQL
-for PCF](./installing.html) topic.
-
+This topic describes how to use a9s MySQL for PCF.
 
 ##  <a id='use-a9s-mysql-with-an-application'></a> Use a9s MySQL with an Application
 
@@ -229,58 +227,8 @@ There you can see a security group with the name `guard_ca16f111-5073-40b7-973a-
 
 ## <a id='backup-and-restore-service-instances'></a> Backup and Restore Service Instances
 
-a9s MySQL provides an easy way to create backups and restore if needed.
-
-### <a id='get-dashboard-address-login-and-authorize'></a> Get Dashboard Address, Log In, and Authorize
-
-1. Grap the dashboard URL with `cf service SERVICE-NAME`.
-  ```bash
-  $cf service my-mysql
-
-  Service instance: my-mysql
-  Service: a9s-mysql
-  Bound apps:
-  Tags:
-  Plan: mysql-single-small
-  Description: This is a service creating and managing dedicated MySQL service instances and clusters, powered by the anynines Service Framework
-  Documentation url:
-  Dashboard: https://a9s-mysql-dashboard.aws.ie.a9s.eu/service-instances/ca16f111-5073-40b7-973a-156c75dd3028
-
-  Last Operation
-  Status: update succeeded
-  Message:
-  Started: 2017-10-26T08:28:38Z
-  Updated: 2017-10-26T08:28:38Z
-  ```
-
-1. Browse to the dashboard URL and authenticate on the redirected page with your Cloud Foundry credentials: 
-
-1. Click **Authorize** to approve the authorization request. 
-
-### <a id='perform-a-backup'></a> Perform a Backup
-
-On the dashboard, you can trigger a backup by clicking **Trigger backup**.
-
-![service-dashboard](images/service-dashboard.png)
-
-After a short period of time the backup will be queued and the backup process will soon start.
-
-![service-dashboard](images/service-dashboard-bkp-triggered.png)
-
-<p class='note'><strong>Note:</strong> Depending on the size of the data, the backup will take some time.</p>
-
-### <a id='restore-a-backup'></a> Restore a Backup
-
-1. Open the dashboard again and select the backup you would like to restore.
-
-1. Click **Restore** and wait for the restore to trigger.
-
-![service-dashboard](images/service-dashboard-restore-triggered.png)
-
-<p class='note'><strong>Note:</strong> Depending on the size of the data, the restore will take some time.</p>
-
-![service-dashboard](images/service-dashboard-final.png)
-
+a9s MongoDB provides an easy way to create backups and restore if needed.
+For a more detailed description see the [a9s Service Dashboard](a9s-service-dashboard.html) documentation.
 
 ## <a id='make-a-service-instance-locally-available'></a> Make a Service Instance Locally Available
 
